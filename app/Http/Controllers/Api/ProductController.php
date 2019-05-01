@@ -40,6 +40,7 @@ class ProductController extends Controller
     public function store(Request $request){
         try {
             $productData = $request->all();
+            // dd($productData);
             $this->product->create($productData);
             $return = ['data' => ['msg'=> 'Produto criado com sucesso!']];
             return response()->json([$return,201]);
